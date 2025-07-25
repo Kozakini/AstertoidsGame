@@ -118,18 +118,18 @@ def main():
             screen.fill((0, 0, 0)) # Black background
 
             # Render and display "Game Over" text
-            game_over_font = pygame.font.Font(None, 74)
+            game_over_font = pygame.font.Font('PressStart2P-vaV7.ttf', 74)
             game_over_text = game_over_font.render("Game Over", True, white)
             game_over_rect = game_over_text.get_rect(center=(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2 - 50))
             screen.blit(game_over_text, game_over_rect)
 
             # Render and display "Press R to Restart" text
-            restart_font = pygame.font.Font(None, 50)
+            restart_font = pygame.font.Font('PressStart2P-vaV7.ttf', 50)
             restart_text = restart_font.render("Press R to Restart", True, white)
             restart_rect = restart_text.get_rect(center=(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2))
             screen.blit(restart_text, restart_rect)
 
-            restart_font = pygame.font.Font(None, 50)
+            restart_font = pygame.font.Font('PressStart2P-vaV7.ttf', 50)
             restart_text = restart_font.render("Score: "+str(score), True, white)
             restart_rect = restart_text.get_rect(center=(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2 + 50))
             screen.blit(restart_text, restart_rect)
