@@ -6,7 +6,9 @@ from asteroid import Asteroid
 from asteroidfield import AsteroidField
 from bullets import Shot
 from explosion import Boom
+from sky import Star
 import pygame.freetype
+import random
 
 
 
@@ -23,6 +25,7 @@ def main():
     dt = 0
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 
+
     font = pygame.font.Font('PressStart2P-vaV7.ttf', 32)
     text = font.render(str(score), True, white, (0,0,0,255))
     textRect = text.get_rect()
@@ -32,6 +35,13 @@ def main():
     drawable = pygame.sprite.Group()
     bullets = pygame.sprite.Group()
     explosions = pygame.sprite.Group()
+
+    stars = pygame.sprite.Group()
+    Star.containers = (stars, drawable)
+    for i in range (0,50):
+        pos_x = random.randint(30, SCREEN_WIDTH)
+        pos_y = random.randint(30, SCREEN_WIDTH)
+        Star(pos_x, pos_y)
 
     Player.containers = (updatable, drawable)
     player = Player(SCREEN_WIDTH / 2 - 5, SCREEN_HEIGHT / 2)
